@@ -7,4 +7,4 @@ install:
   - pip install webtest==2.0.6
   - pip install nosegae==0.2.0
 # command to run tests
-script:  python testrunner.py google_appengine .
+script: nosetests --with-gae --gae-lib-root=google_appengine
