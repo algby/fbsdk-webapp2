@@ -7,47 +7,12 @@
 {% endblock css %}
 
 {% block container %}
-
-    <header class="menu">
-        <h1>Só nas boas!</h1>
-        <h2>{{user}}</h2>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="/meus-convites">
-                        Meus Convites
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="/meus-convites/pendentes">Pendentes</a>
-                        </li>
-                        <li>
-                            <a href="/meus-convites/confirmados">Confirmados</a>
-                        </li>
-                        <li>
-                            <a href="/meus-convites/indecisos">Indecisos</a>
-                        </li>
-                        <li>
-                            <a href="/meus-convites/recusados">Recusados</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="/meus-eventos">Meus Eventos</a></li>
-                <li><a href="/meus-amigos">Meus Amigos</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div data-ng-view>
+<div class="pure-g">
+    <div class="pure-u-1-3">
+        <header class="menu">
+            <h1>Facebook SDK App Engine</h1>
+            <h2>{{user.name}}</h2>
+        </header>
     </div>
-
-{% endblock %}
-
-{% block js %}
-    <script src="/js/app.js"></script>
+</div>
 {% endblock %}

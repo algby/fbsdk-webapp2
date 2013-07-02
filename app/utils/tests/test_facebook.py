@@ -31,9 +31,7 @@ class TestGeUrlLogin(TestFacebookSDK):
         self.assertTrue('state' in self.url_login)
 
     def test_url_login_deve_conter_scope(self):
-        SCOPE = ['user_birthday', 'user_events', 'friends_events',
-                 'email', 'publish_actions', 'user_about_me',
-                 'user_status', 'friends_birthday', 'create_event', 'rsvp_event', ]
+        SCOPE = ['user_birthday', ]
         for s in SCOPE:
             self.assertTrue(s in self.url_login)
 
