@@ -7,9 +7,7 @@ config = {
     'REDIRECT_URI': "http://localhost/",
 
     # SCOPE - PERMISSÕES NECESSÁRIAS PARA ACESSAR OS DADOS DO USUÁRIO NO FACEBOOK
-    'SCOPE': ['user_birthday', 'user_events', 'friends_events',
-              'email', 'publish_actions', 'user_about_me',
-              'user_status', 'friends_birthday', 'create_event', 'rsvp_event', ],
+    'SCOPE': ['user_birthday', ],
 
     'KEY': 'key-qualquer-trocar-depois',
 

@@ -1,6 +1,7 @@
 # encoding: utf-8
+from app.settings import config
 from app.base import BaseHandler
-from app.utils import FacebookSDK
+from app.utils.facebook import FacebookSDK
 import webapp2
 
 
@@ -32,4 +33,4 @@ class IndexHandler(BaseHandler):
 
 app = webapp2.WSGIApplication([
     ('/', IndexHandler)
-], debug=True)
+], config=config, debug=True)

@@ -3,14 +3,12 @@
 config = {
 
     # CONFIG DO FACEBOK
-    'APP_ID': '655629421117845',
-    'APP_SECRET': '53e1aba04d7c23f657060ed4f12a70e5',
+    'APP_ID': '480963215313040',
+    'APP_SECRET': '9adcfc8fe8419dfc64d8c83f96418e5c',
     'REDIRECT_URI': "http://localhost:8080/",
 
     # SCOPE - PERMISSÕES NECESSÁRIAS PARA ACESSAR OS DADOS DO USUÁRIO NO FACEBOOK
-    'SCOPE': ['user_birthday', 'user_events', 'friends_events',
-              'email', 'publish_actions', 'user_about_me',
-              'user_status', 'friends_birthday', 'create_event', 'rsvp_event', ],
+    'SCOPE': ['user_birthday', ],
 
     'KEY': 'key-qualquer-trocar-depois',
 
