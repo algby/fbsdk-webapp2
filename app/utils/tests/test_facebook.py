@@ -1,18 +1,18 @@
 # encoding: utf-8
-from app.utils.facebook import FacebookAPI
+from app.utils.facebook import FacebookSDK
 from google.appengine.ext import testbed
 from app.settings import config
 import unittest
 
 
-class TestFacebookAPI(unittest.TestCase):
+class TestFacebookSDK(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.facebook = FacebookAPI()
+        cls.facebook = FacebookSDK()
 
 
-class TestGeUrlLogin(TestFacebookAPI):
+class TestGeUrlLogin(TestFacebookSDK):
 
     """
         Classe de teste responsável por testar o metodo get_url_login
@@ -38,7 +38,7 @@ class TestGeUrlLogin(TestFacebookAPI):
             self.assertTrue(s in self.url_login)
 
 
-class TestGetNumRandom(TestFacebookAPI):
+class TestGetNumRandom(TestFacebookSDK):
 
     def test_numeros_gerados_devem_ser_diferentes(self):
         num1 = self.facebook._get_encode_random()
@@ -46,7 +46,7 @@ class TestGetNumRandom(TestFacebookAPI):
         self.assertNotEqual(num1, num2)
 
 
-class TestGenerateHash(TestFacebookAPI):
+class TestGenerateHash(TestFacebookSDK):
 
     def test_hashes_devem(self):
         num = self.facebook._get_encode_random()
@@ -55,7 +55,7 @@ class TestGenerateHash(TestFacebookAPI):
         self.assertNotEqual(hash1, hash2)
 
 
-class TestUrlOAuthToken(TestFacebookAPI):
+class TestUrlOAuthToken(TestFacebookSDK):
 
     def setUp(self):
         self.testbed = testbed.Testbed()
