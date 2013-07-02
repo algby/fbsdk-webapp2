@@ -3,9 +3,9 @@
 config = {
 
     # CONFIG DO FACEBOOK
-    'APP_ID': '523258614382919',
-    'APP_SECRET': 'e98a0936ccd75fb70f2cfa4a253f8d5e',
-    'REDIRECT_URI': "http://www.sonasboas.com/",
+    'APP_ID': '480963215313040',
+    'APP_SECRET': '9adcfc8fe8419dfc64d8c83f96418e5c',
+    'REDIRECT_URI': "http://fb-sdk.appspot.com/",
 
     # SCOPE - PERMISSÕES NECESSÁRIAS PARA ACESSAR OS DADOS DO USUÁRIO NO FACEBOOK
     'SCOPE': ['user_birthday', ],
