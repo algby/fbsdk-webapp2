@@ -25,8 +25,10 @@ class IndexHandler(BaseHandler):
             return self.render_template('index.html', login_facebook=url)
 
         else:
+            # pega o access token da session e adiciona no objeto
+            fb.access_token = self.session['access_token']
             if not 'user' in self.session:
-                result = fb.fql(query="SELECT name FROM user WHERE uid = me()", access_token=self.session['access_token'])
+                result = fb.fql(query="SELECT name FROM user WHERE uid = me()")
                 self.session['user'] = result['data'][0]
             return self.render_template('home.html', user=self.session['user'])
 
