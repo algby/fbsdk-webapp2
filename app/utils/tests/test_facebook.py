@@ -9,7 +9,7 @@ class TestFacebookSDK(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.facebook = FacebookSDK()
+        cls.facebook = FacebookSDK('access-token-here')
 
 
 class TestGetUrlLogin(TestFacebookSDK):
