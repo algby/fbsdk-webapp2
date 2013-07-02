@@ -4,14 +4,38 @@
     Só nas Boas - Entre e fique por dentro de tudo!
 {% endblock %}
 
+{% block css %}
+    <style>
+        .gist {
+            max-width:735px;
+        }
+    </style>
+{% endblock %}
 {% block container %}
 
     <div class="pure-u-1" style="text-align: center;">
-        <h1>Seja bem-vindo!</h1>
-        <h2><a href="{{login_facebook}}" class="pure-button pure-button-primary">Login via Facebook</a></h2>
+        <h1>Facebook SDK App Engine</h1>
+        <h2>
+            <a href="{{login_facebook}}" class="pure-button pure-button-primary">Login via Facebook</a>
+        </h2>
+
         {% if error %}
             <p>{{error}}</p>
         {% endif %}
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://github.com/raphaelcuba/fb-sdk">
+                        This project on Github
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </div>
+    <center>
+        <script src="https://gist.github.com/raphaelcuba/5907192.js"></script>
+    </center>
 
 {% endblock %}

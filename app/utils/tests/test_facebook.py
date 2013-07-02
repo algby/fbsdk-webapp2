@@ -12,7 +12,7 @@ class TestFacebookSDK(unittest.TestCase):
         cls.facebook = FacebookSDK()
 
 
-class TestGeUrlLogin(TestFacebookSDK):
+class TestGetUrlLogin(TestFacebookSDK):
 
     """
         Classe de teste responsável por testar o metodo get_url_login
