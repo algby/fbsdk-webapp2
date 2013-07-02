@@ -11,9 +11,11 @@ import os
 
 class FacebookSDK(object):
 
-    app_id = config['APP_ID']
-    app_secret = config['APP_SECRET']
-    redirect_uri = config['REDIRECT_URI']
+    def __init__(self, access_token=None):
+        self.access_token = access_token
+        self.app_id = config['APP_ID']
+        self.app_secret = config['APP_SECRET']
+        self.redirect_uri = config['REDIRECT_URI']
 
     def get_url_login(self):
         state = self._generate_hash(num_random=self._get_encode_random())
@@ -25,6 +27,14 @@ class FacebookSDK(object):
                                       'STATE': state,
                                       'REDIRECT_URI': self.redirect_uri,
                                       'SCOPE': ",".join(config['SCOPE'])})
+
+    def get_url_logout(self):
+        return ("https://www.facebook.com/logout.php?"
+                "next=%(REDIRECT_URI)s&"
+                "access_token=%(ACCESS_TOKEN)s" % {
+                'REDIRECT_URI': self.redirect_uri,
+                'ACCESS_TOKEN': self.access_token
+                })
 
     def _generate_hash(self, num_random):
         """
@@ -69,17 +79,17 @@ class FacebookSDK(object):
         except Exception:
             return None
 
-    def fql(self, query, access_token):
+    def fql(self, query):
         params = {
-            'access_token': access_token,
+            'access_token': self.access_token,
             'q': query
         }
         url = "https://graph.facebook.com/fql?%s" % urllib.urlencode(params)
         return json.loads(urlfetch.fetch(url).content)
 
-    def graph_api(self, url, access_token, method=urlfetch.GET):
+    def graph_api(self, url, method=urlfetch.GET):
         params = {
-            'access_token': access_token,
+            'access_token': self.access_token,
         }
         url = "https://graph.facebook.com/%(url)s?%(access_token)s" % {
             'access_token': urllib.urlencode(params),
